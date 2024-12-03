@@ -1,18 +1,22 @@
+/* styles.css */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #e9ece f; /* Light gray background */
+    color: #333; /* Dark text color for better readability */
 }
 
 header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 10px 0;
+    background: #35424a; /* Dark background for header */
+    color: #ffffff; /* White text color */
+    padding: 20px 0; /* More padding for a spacious look */
 }
 
 header h1 {
- text-align: center;
+    text-align: center;
+    font-size: 2.5em; /* Larger font size for the title */
+    margin: 0; /* Remove default margin */
 }
 
 nav {
@@ -21,27 +25,73 @@ nav {
 }
 
 nav a {
-    color: #ffffff;
-    padding: 10px 15px;
+    color: #ffffff; /* White text for links */
+    padding: 15px 20px; /* More padding for clickable area */
     text-decoration: none;
+    font-weight: bold; /* Bold text for links */
+    transition: background 0.3s; /* Smooth transition for hover effect */
 }
 
 nav a:hover {
-    background: #e8491d;
+    background: #e8491d; /* Change background on hover */
+    border-radius: 5px; /* Rounded corners for hover effect */
 }
 
 .container {
     width: 80%;
     margin: auto;
     overflow: hidden;
+    padding: 20px; /* Add padding to the container */
+    background: #ffffff; /* White background for content */
+    border-radius: 8px; /* Rounded corners for content */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+h2 {
+    color: #35424a; /* Dark color for headings */
+    font-size: 2em; /* Larger font size for headings */
+    margin-bottom: 10px; /* Space below headings */
 }
 
 footer {
-    background: #35424a;
-    color: #ffffff;
+    background: #35424a; /* Dark background for footer */
+    color: #ffffff; /* White text color */
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0; /* More padding for footer */
     position: relative;
     bottom: 0;
     width: 100%;
+    margin-top: 20px; /* Space above footer */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    max-width: 400px; /* Limit form width */
+    margin: auto; /* Center the form */
+}
+
+form label {
+    margin-top: 10px; /* Space above labels */
+}
+
+form input, form textarea {
+    padding: 10px; /* Padding inside input fields */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners for input fields */
+}
+
+form button {
+    margin-top: 10px; /* Space above button */
+    padding: 10px; /* Padding inside button */
+    background: #e8491d; /* Button background color */
+    color: #ffffff; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s; /* Smooth transition for hover effect */
+}
+
+form button:hover {
+    background: #35424a; /* Change background on hover */
 }
