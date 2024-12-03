@@ -3,9 +3,17 @@
 # Set the secret key for session management
 from flask import Flask, render_template, request, redirect, flash
 from flask_mail import Mail, Message
+import os
+import secrets
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key_here'  # Replace with your actual secret key
+
+# Generate a secure secret key
+app.secret_key = secrets.token_hex(32)  # Generates a 64-character hexadecimal string
 
 
 
