@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-</head>
-<body>
-    <h1>Contact Us</h1>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/about">About Us</a>
-        <a href="/contact">Contact</a>
-    </nav>
+{% extends "base.html" %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+    <h2>Contact Us</h2>
     <form id="contact-form">
         <div>
             <label for="name">Name</label>
@@ -27,7 +18,7 @@
             <textarea id="message" rows="4" required></textarea>
         </div>
         <div>
-            <button type="submit">Submit</button>
+            <button type="submit">Send</button>
         </div>
     </form>
     <p id="response-message"></p>
@@ -42,9 +33,9 @@
 
             // Use SMTP.js to send the email
             Email.send({
-                Host: "smtp.your-email-provider.com", // Replace with your SMTP server
-                Username: "your-email@example.com", // Your email address
-                Password: "your-email-password", // Your email password
+                Host: "smtp.gmail.com", // Gmail SMTP server
+                Username: "your-email@gmail.com", // Your Gmail address
+                Password: "your-email-password", // Your Gmail password or App Password
                 To: 'recipient@example.com', // Recipient's email address
                 From: email,
                 Subject: `New message from ${name}`,
@@ -59,5 +50,4 @@
             });
         });
     </script>
-</body>
-</html>
+{% endblock %}
