@@ -1,1 +1,118 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e3f2fd; /* Light blue background */
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-image: url('/static/images/header.jpg'); /* Change this to your header image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+        }
+        header h1 {
+            font-size: 3em; /* Larger font size for better readability */
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for better contrast */
+        }
+        header p {
+            font-size: 1.5em; /* Slightly larger font for the subtitle */
+            margin: 10px 0 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for better contrast */
+        }
+        nav {
+            margin: 20px;
+            text-align: center; /* Center align navigation links */
+            background-color: #4CAF50; /* Green background for navigation */
+            padding: 10px 0; /* Padding for nav bar */
+            border-radius: 5px; /* Rounded corners for nav bar */
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white; /* White text for visibility */
+            font-weight: bold;
+            font-size: 1.2em; /* Increased font size for navigation */
+        }
+        nav a:hover {
+            text-decoration: underline;
+            color: #FFD700; /* Gold color on hover */
+        }
+        .content {
+            padding: 20px;
+            max-width: 1200px; /* Limit content width for better readability */
+            margin: 20px auto; /* Center the content */
+            background-color: #ffffff; /* White background for content area */
+            border-radius: 10px; /* Rounded corners for content area */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+        }
+        .content h2 {
+            color: #4CAF50; /* Green color for headings */
+            text-align: center; /* Center align heading */
+        }
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .image-gallery img {
+            width: 30%;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s; /* Smooth scaling effect */
+        }
+        .image-gallery img:hover {
+            transform: scale(1.05); /* Scale up on hover */
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Nature Photography Site!</h1>
+        <p>Explore the beauty of nature through our lens.</p>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </nav>
+    <div class="content">
+        <h2>Featured Images</h2>
+        <div class="image-gallery">
+            <img src="/static/images/1.jfif" alt="Nature 1">
+            <img src="/static/images/image 2.jpg" alt="Nature 2">
+            <img src="/static/images/image3.jpg" alt="Nature 3">
+            <img src="/static/images/image4.jpg" alt="Nature 4">
+            <img src="/static/images/image5.jpg" alt="Nature 5">
+            <img src="/static/images/image6.jpg" alt="Nature 6">
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Nature Photography. All rights reserved.</p>
+    </footer>
+</body>
+</html>
