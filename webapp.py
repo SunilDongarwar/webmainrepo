@@ -34,7 +34,21 @@ def about():
 
 @app.route('/contact')
 def contact():
- return render_template('contact.html')
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        message = request.form['message']
+
+        # Create and send the email
+        msg = Message(subject=f'New message from {name}',
+                      recipients=['recipient@example.com'])  # Replace with your recipient's email
+        msg.body = f'From: {name} <{email}>\n\n{message}'
+        mail.send(msg)
+
+        flash('Your message has been sent successfully!', 'success')
+        return redirect('/contact')  # Redirect to the contact page after submission
+
+    return render_template('contact.html')
 
 if __name__ == '__main__':
  app.run(debug=True)
