@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 <body>
     <h1>Contact Us</h1>
@@ -12,31 +13,51 @@
         <a href="/about">About Us</a>
         <a href="/contact">Contact</a>
     </nav>
-    <form action="/contact" method="POST">
+    <form id="contact-form">
         <div>
             <label for="name">Name</label>
-            <input type="text" name="name" required />
+            <input type="text" id="name" required />
         </div>
         <div>
             <label for="email">Email</label>
-            <input type="email" name="email" required />
+            <input type="email" id="email" required />
         </div>
         <div>
             <label for="message">Message</label>
-            <textarea name="message" rows="4" required></textarea>
+            <textarea id="message" rows="4" required></textarea>
         </div>
         <div>
             <button type="submit">Submit</button>
         </div>
     </form>
-    {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        <ul>
-        {% for category, message in messages %}
-          <li class="{{ category }}">{{ message }}</li>
-        {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
+    <p id="response-message"></p>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Use SMTP.js to send the email
+            Email.send({
+                Host: "smtp.your-email-provider.com", // Replace with your SMTP server
+                Username: "your-email@example.com", // Your email address
+                Password: "your-email-password", // Your email password
+                To: 'recipient@example.com', // Recipient's email address
+                From: email,
+                Subject: `New message from ${name}`,
+                Body: message
+            })
+            .then(function(response) {
+                document.getElementById('response-message').textContent = 'Your message has been sent successfully!';
+                document.getElementById('contact-form').reset(); // Reset the form
+            })
+            .catch(function(error) {
+                document.getElementById('response-message').textContent = 'There was a problem sending your message.';
+            });
+        });
+    </script>
 </body>
 </html>
